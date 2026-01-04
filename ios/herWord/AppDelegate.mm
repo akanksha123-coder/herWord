@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import "RNBootSplash.h"
 
 @implementation AppDelegate
 
@@ -12,6 +13,10 @@
   self.initialProps = @{};
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (void)customizeRootView:(RCTRootView *)rootView {
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
